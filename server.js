@@ -36,7 +36,7 @@ app.get("/api/:date?", function (req, res) {
         utc: new Date(parseInt(date)).toUTCString()
       });
     }
-    else if (moment.utc(date, 'YYYY-M-D', true).isValid()) {
+    else if (moment.utc(date).isValid()) {
       res.json({
         unix: new Date(date).getTime(),
         utc: new Date(date).toUTCString()
